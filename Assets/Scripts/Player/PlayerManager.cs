@@ -5,18 +5,18 @@ public class PlayerManager : MonoBehaviour {
     public AudioClip powerupSfx;
     public AudioClip gameOverSfx;
 
-    private AudioSource audioSrc;
+    private AudioSource _audioSrc;
 
     private void Start() {
-        audioSrc = GetComponent<AudioSource>();
+        _audioSrc = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision other) {
         switch (other.gameObject.tag) {
             case "Obstacle": {
-                audioSrc.PlayOneShot(collideSfx);
+                _audioSrc.PlayOneShot(collideSfx);
                 if (--ActiveState.lives == 0) {
-                    audioSrc.PlayOneShot(gameOverSfx);
+                    _audioSrc.PlayOneShot(gameOverSfx);
                     Event.gameOver.Raise();
                 } else {
                     Event.screenShake.Raise();
@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour {
                 break;
             }
             case "LaserPowerup": {
-                audioSrc.PlayOneShot(powerupSfx);
+                _audioSrc.PlayOneShot(powerupSfx);
                 ActiveState.bulletCount += 5;
                 break;
             }
