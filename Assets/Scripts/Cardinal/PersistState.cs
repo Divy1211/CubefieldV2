@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StatePersist : MonoBehaviour {
+public class PersistState : MonoBehaviour {
     public static int highScore {
         get => _stats.highScore;
         set => _stats.highScore = value;

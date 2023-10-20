@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GenCube : MonoBehaviour {
     public bool showPath;
@@ -8,7 +10,7 @@ public class GenCube : MonoBehaviour {
     public GameObject powerup;
     public GameObject[] cubes;
 
-    public float genDelta = 1.0f;
+    public float genDist = 10.0f;
     public float genVariance = 4.0f;
     public float genProb = 0.01f;
     public int pathWidth = 1;
@@ -19,9 +21,18 @@ public class GenCube : MonoBehaviour {
 
     private Rigidbody _body;
 
+    private void FixedUpdate() {
+        genDist = ActiveConfig.genDist;
+        genVariance = ActiveConfig.genVariance;
+        genProb = ActiveConfig.genProb;
+        pathWidth = ActiveConfig.pathWidth;
+        pathStepWidth = ActiveConfig.pathStepWidth;
+        lineWidth = ActiveConfig.lineWidth;
+    }
+
     private IEnumerator GenCubes() {
         while (true) {
-            yield return new WaitForSecondsRealtime(genDelta);
+            yield return new WaitForSecondsRealtime(genDist/ActiveState.speed);
             for (int x = -lineWidth; x <= lineWidth; ++x) {
                 if (showPath && x == _pathX) {
                     Instantiate(refCube, new Vector3(x, 0.9f, 40.0f), Quaternion.identity);
@@ -53,7 +64,6 @@ public class GenCube : MonoBehaviour {
             } else {
                 _pathX += Mathf.RoundToInt(Random.Range(-pathStepWidth - 0.5f, pathStepWidth + 0.5f));
             }
-            // _pathX = Mathf.Clamp(_pathX, -lineWidth + 2, lineWidth - 2);
         }
     }
 
@@ -61,7 +71,8 @@ public class GenCube : MonoBehaviour {
         StartCoroutine(GenCubes());
     }
 
-    private void OnReset() {
+    public void OnGameReset() {
+        _pathX = 0;
         StopAllCoroutines();
         StartCoroutine(GenCubes());
     }

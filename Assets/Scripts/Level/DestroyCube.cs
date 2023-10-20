@@ -10,4 +10,8 @@ public class DestroyCube : MonoBehaviour {
             }
         }
     }
+
+    public void OnGameReset() {
+        Destroy(gameObject);
+    }
 }

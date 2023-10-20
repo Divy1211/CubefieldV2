@@ -5,7 +5,7 @@ public enum HudType {
     Score,
     Highscore,
     Lives,
-    Bullets
+    Bullets,
 }
 
 public class ScoreController : MonoBehaviour {
@@ -20,19 +20,19 @@ public class ScoreController : MonoBehaviour {
     private void Update() {
         switch (type) {
             case HudType.Lives: {
-                scoreText.text = "Lives: " + LiveState.lives;
+                scoreText.text = "Lives: " + ActiveState.lives;
                 break;
             }
             case HudType.Highscore: {
-                scoreText.text = "Top Score: " + StatePersist.highScore;
+                scoreText.text = "Top Score: " + PersistState.highScore;
                 break;
             }
             case HudType.Bullets: {
-                scoreText.text = "Bullets: " + LiveState.bulletCount;
+                scoreText.text = "Bullets: " + ActiveState.bulletCount;
                 break;
             }
             case HudType.Score: {
-                scoreText.text = "Score: " + LiveState.score;
+                scoreText.text = "Score: " + ActiveState.score;
                 break;
             }
         }

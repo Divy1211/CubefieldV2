@@ -2253,6 +2253,9 @@ GameObject:
   - component: {fileID: 1982580564}
   - component: {fileID: 1982580566}
   - component: {fileID: 1982580567}
+  - component: {fileID: 1982580570}
+  - component: {fileID: 1982580569}
+  - component: {fileID: 1982580568}
   m_Layer: 0
   m_Name: Cardinal
   m_TagString: Untagged
@@ -2303,6 +2306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f98076543277edb4f9d6fd139298c733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easy: {fileID: 11400000, guid: 07ba74d9755e82c4eab2869e3b9378e3, type: 2}
+  med: {fileID: 11400000, guid: ec6f229aabef4b740bbabed1882a109b, type: 2}
+  hard: {fileID: 11400000, guid: a8de7b16a80f451449b50e74f0f4b7b6, type: 2}
 --- !u!114 &1982580564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,14 +2321,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4ac0e7b7b0543438163db05a03d17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showPath: 1
+  showPath: 0
   refCube: {fileID: 7157875439634567359, guid: f6b4937190beb16408990ffea353b1ec, type: 3}
   powerup: {fileID: 5362359269173617175, guid: 0d96fa65ba37f374eaa4a8fb971fbb5a, type: 3}
   cubes:
   - {fileID: 6286946933778297683, guid: b3ce9a2ef459202479348e89dfe15791, type: 3}
   - {fileID: 414823196599586534, guid: 182e39481139db1429a853e229d28ef3, type: 3}
   - {fileID: 7157875439634567359, guid: fcc08614ae1ec2c4c8b4fc976cd4e81d, type: 3}
-  genDelta: 1
+  genDist: 10
   genVariance: 4
   genProb: 1
   pathWidth: 1
@@ -2343,6 +2349,9 @@ MonoBehaviour:
   _gameOver: {fileID: 11400000, guid: d59b28a0e6a222b438e35b386a316209, type: 2}
   _gameReset: {fileID: 11400000, guid: 573d0dbca649c5b4eac0afd2b1928830, type: 2}
   _screenShake: {fileID: 11400000, guid: 80b2300471980b347b06c7fd7251e6c5, type: 2}
+  _easyDifficulty: {fileID: 11400000, guid: 4903e6a17726293438743c4cfce91ffd, type: 2}
+  _medDifficulty: {fileID: 11400000, guid: 7a110c7d0fd7e4445a6dc6345e271779, type: 2}
+  _hardDifficulty: {fileID: 11400000, guid: eeaeddb5b112c0142aa5f5e4f7b9ae7c, type: 2}
 --- !u!114 &1982580566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,6 +2400,102 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: StateLive, Assembly-CSharp
         m_MethodName: OnGameReset
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1982580564}
+        m_TargetAssemblyTypeName: GenCube, Assembly-CSharp
+        m_MethodName: OnGameReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1982580568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982580560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bd15d5f1bd46fe97e10eff78c4cff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: 7a110c7d0fd7e4445a6dc6345e271779, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1982580563}
+        m_TargetAssemblyTypeName: ActiveState, Assembly-CSharp
+        m_MethodName: OnDifficultySelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1982580569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982580560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bd15d5f1bd46fe97e10eff78c4cff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: eeaeddb5b112c0142aa5f5e4f7b9ae7c, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1982580563}
+        m_TargetAssemblyTypeName: ActiveState, Assembly-CSharp
+        m_MethodName: OnDifficultySelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1982580570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982580560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bd15d5f1bd46fe97e10eff78c4cff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: 4903e6a17726293438743c4cfce91ffd, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1982580563}
+        m_TargetAssemblyTypeName: ActiveState, Assembly-CSharp
+        m_MethodName: OnDifficultySelected
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

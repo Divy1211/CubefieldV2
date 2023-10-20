@@ -4,10 +4,15 @@ public class ButtonController : MonoBehaviour {
     public void OnClickGameReset() {
         Event.gameReset.Raise();
     }
-    // public void OnClickGamePause() {
-    //     LiveState.isPaused;
-    //     Event.gamePause.Raise();
-    // }
+    public void OnClickEasyDifficulty() {
+        Event.easyDifficulty.Raise();
+    }
+    public void OnClickMedDifficulty() {
+        Event.medDifficulty.Raise();
+    }
+    public void OnClickHardDifficulty() {
+        Event.hardDifficulty.Raise();
+    }
     // public void OnClickStartStart() {
     //     Event.gameStart.Raise(null);
     // }

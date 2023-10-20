@@ -6,15 +6,17 @@ public class MoveCam : MonoBehaviour {
 
     private Transform _playerPos;
     private Transform _camPos;
+    private Vector3 _startPos;
+
 
     private void Start() {
         _playerPos = player.GetComponent<Transform>();
         _camPos = transform;
+        _startPos = _camPos.position;
     }
 
     private void Update() {
-        var pos = _camPos.position;
-        _camPos.position = new Vector3(_playerPos.position.x, pos.y, pos.z);
+        _camPos.position = new Vector3(_playerPos.position.x, _startPos.y, _startPos.z);
     }
 
     private IEnumerator Shake(float duration, float intensity = 1) {

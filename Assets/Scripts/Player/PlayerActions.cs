@@ -6,12 +6,10 @@ public class PlayerActions : MonoBehaviour {
 
     public float speed = 10.0f;
     public float jumpImpulse = 10.0f;
-    public float gravityScale = 1.0f;
+    public float gravityScale = 3.0f;
 
     public AudioClip jumpSfx;
     public AudioClip shootSfx;
-
-    private float g = 9.8f;
 
     private CubeAction _cubeAction;
     private Rigidbody _body;
@@ -34,15 +32,15 @@ public class PlayerActions : MonoBehaviour {
     }
 
     private void OnFire(InputAction.CallbackContext ctx) {
-        if (LiveState.bulletCount == 0) return;
+        if (ActiveState.bulletCount == 0) return;
 
         _audioSrc.PlayOneShot(shootSfx);
-        --LiveState.bulletCount;
+        --ActiveState.bulletCount;
         GameObject bullet = Instantiate(
             bulletPrefab, transform.position + Vector3.forward * 1.5f, bulletPrefab.transform.rotation
         );
         Rigidbody body = bullet.GetComponent<Rigidbody>();
-        body.velocity = Vector3.forward * speed;
+        body.velocity = Vector3.forward * 10;
     }
 
     private void Start() {
@@ -62,10 +60,12 @@ public class PlayerActions : MonoBehaviour {
     private void FixedUpdate() {
         var vel = _body.velocity;
         _body.velocity = new Vector3(_velocityX, vel.y, vel.z);
-        _body.AddForce(Vector3.down * (_body.mass * g * gravityScale), ForceMode.Acceleration);
+        _body.AddForce(Vector3.down * (_body.mass * 9.8f * gravityScale), ForceMode.Acceleration);
 
         var pos = _body.transform.localPosition;
-        _body.transform.localPosition = new Vector3(Mathf.Clamp(pos.x, -4, 4), pos.y, pos.z);
+        _body.transform.localPosition = new Vector3(
+            Mathf.Clamp(pos.x, -ActiveConfig.lineWidth+2, ActiveConfig.lineWidth-2), pos.y, pos.z
+        );
     }
 
     private void OnCollisionEnter(Collision other) {

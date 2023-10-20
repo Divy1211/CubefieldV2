@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour {
         switch (other.gameObject.tag) {
             case "Obstacle": {
                 audioSrc.PlayOneShot(collideSfx);
-                if (--LiveState.lives == 0) {
+                if (--ActiveState.lives == 0) {
                     audioSrc.PlayOneShot(gameOverSfx);
                     Event.gameOver.Raise();
                 } else {
@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour {
             }
             case "LaserPowerup": {
                 audioSrc.PlayOneShot(powerupSfx);
-                LiveState.bulletCount += 5;
+                ActiveState.bulletCount += 5;
                 break;
             }
         }
@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void OnGameReset() {
         GetComponent<Transform>().localPosition = new Vector3(0, -0.32f, 0);
-        LiveState.bulletCount = 0;
+        ActiveState.bulletCount = 0;
         StopAllCoroutines();
     }
 }

@@ -176,8 +176,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -8512675957191655843}
-        m_TargetAssemblyTypeName: MoveCube, Assembly-CSharp
+      - m_Target: {fileID: 8649031448737749261}
+        m_TargetAssemblyTypeName: DestroyCube, Assembly-CSharp
         m_MethodName: OnGameReset
         m_Mode: 1
         m_Arguments:
