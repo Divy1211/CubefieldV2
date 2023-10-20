@@ -10,7 +10,8 @@ public class MoveCube : MonoBehaviour {
     private void FixedUpdate() {
         _body.velocity = Vector3.back * ActiveState.speed;
         if (_body.transform.position.z < -10) {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            // Destroy(gameObject);
         }
     }
 }

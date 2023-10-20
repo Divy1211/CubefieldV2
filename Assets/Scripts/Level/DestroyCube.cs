@@ -5,13 +5,15 @@ public class DestroyCube : MonoBehaviour {
         switch (other.gameObject.tag) {
             case "Bullet":
             case "Player": {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
+                // Destroy(gameObject);
                 break;
             }
         }
     }
 
     public void OnGameReset() {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        // Destroy(gameObject);
     }
 }
