@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4011945143122093962}
   - component: {fileID: 2590009892341548855}
   - component: {fileID: 1180637807990430565}
-  - component: {fileID: 2474569095345614808}
   m_Layer: 5
   m_Name: UiBtn
   m_TagString: Untagged
@@ -122,18 +121,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2474569095345614808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2180028613774225096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35e4cda0f2686d44692c76fb4df3af1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7995737302005895136
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,8 +189,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: R
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c6840c0b95520714ba8cf38e97ffc59f, type: 2}
-  m_sharedMaterial: {fileID: -1510842429763067647, guid: c6840c0b95520714ba8cf38e97ffc59f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -313,7 +300,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2474569095345614808}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: OnClickResetGame
         m_Mode: 1
