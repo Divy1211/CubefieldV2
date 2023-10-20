@@ -7,7 +7,6 @@ public class StateLive : MonoBehaviour {
     private static int _difficultyMultiplier = 1;
 
     private void Update() {
-        Debug.Log(Time.time);
         score = Mathf.RoundToInt(_difficultyMultiplier * Time.time * Time.time);
     }
 }
