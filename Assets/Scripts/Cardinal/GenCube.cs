@@ -5,11 +5,12 @@ public class GenCube : MonoBehaviour {
     public bool showPath;
 
     public GameObject refCube;
+    public GameObject powerup;
     public GameObject[] cubes;
 
     public float genDelta = 1.0f;
     public float genVariance = 4.0f;
-    public float genProb = 1;
+    public float genProb = 0.01f;
     public int pathWidth = 1;
     public int pathStepWidth = 1;
     public int lineWidth = 6;
@@ -26,12 +27,23 @@ public class GenCube : MonoBehaviour {
                     Instantiate(refCube, new Vector3(x, 0.9f, 40.0f), Quaternion.identity);
                 }
 
-                if (Mathf.Abs(x - _pathX) <= pathWidth) continue;
-                if (Random.Range(0f, 1f) > genProb) continue;
+                if (Mathf.Abs(x - _pathX) <= pathWidth) {
+                    if (Random.Range(0f, 10f) < genProb) {
+                        Instantiate(
+                            powerup,
+                            new Vector3(x, 0.9f, 40.0f + Random.Range(-genVariance, genVariance)),
+                            Quaternion.identity
+                        );
+                    }
+                    continue;
+                }
 
                 int i = Mathf.RoundToInt(Random.Range(-0.5f, 2.5f));
-                Instantiate(cubes[i], new Vector3(x, 0.9f, 40.0f + Random.Range(-genVariance, genVariance)),
-                    Quaternion.identity);
+                Instantiate(
+                    cubes[i],
+                    new Vector3(x, 0.9f, 40.0f + Random.Range(-genVariance, genVariance)),
+                    Quaternion.identity
+                );
             }
 
             if (_pathX == -lineWidth + 2) {

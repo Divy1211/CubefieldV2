@@ -6,11 +6,11 @@ public class LiveState : MonoBehaviour {
     public static int bulletCount = 0;
 
     private static int _difficultyMultiplier = 1;
-    private static float _gameStartTime;
+    private static float _elapsedTime;
 
     private void Update() {
-        float delta = Time.time - _gameStartTime;
-        score = Mathf.RoundToInt(_difficultyMultiplier * delta * delta);
+        _elapsedTime += Time.deltaTime;
+        score = Mathf.RoundToInt(_difficultyMultiplier * _elapsedTime * _elapsedTime);
     }
 
     public void OnGameOver() {
@@ -21,6 +21,6 @@ public class LiveState : MonoBehaviour {
         Time.timeScale = 1.0f;
         score = 0;
         lives = 3;
-        _gameStartTime = Time.time;
+        _elapsedTime = 0;
     }
 }

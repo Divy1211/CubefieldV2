@@ -34,8 +34,8 @@ Provide a **link** to download your game executable
   - Shooting: shoot cubes to destroy them if you obtain the Laser powerup
   - Speed: Movement speed increases over time
   - Lives: Colliding with a cube will lose a life and grant temp invincibility for 5s to allow stabilisation
-- Special: Collect power up
-  - Laser: destroy blocks by shooting (lasts 10s)
+- Special: Collect Ammo
+  - Ammo: destroy blocks by shooting lasers (each ammo collected gives 5 laser shots)
 - Resolving:
   - Game ends when all lives are lost. The score is a function of distance travelled and difficulty level
 

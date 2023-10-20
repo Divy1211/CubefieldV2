@@ -8,10 +8,14 @@ public class PlayerActions : MonoBehaviour {
     public float jumpImpulse = 10.0f;
     public float gravityScale = 1.0f;
 
+    public AudioClip jumpSfx;
+    public AudioClip shootSfx;
+
     private float g = 9.8f;
 
     private CubeAction _cubeAction;
     private Rigidbody _body;
+    private AudioSource _audioSrc;
 
     private float _velocityX;
     private bool _onGround = true;
@@ -24,12 +28,15 @@ public class PlayerActions : MonoBehaviour {
     private void OnJump(InputAction.CallbackContext ctx) {
         if (!_onGround) return;
 
+        _audioSrc.PlayOneShot(jumpSfx);
         _onGround = false;
         _body.AddForce(Vector3.up * jumpImpulse, ForceMode.Impulse);
     }
 
     private void OnFire(InputAction.CallbackContext ctx) {
         if (LiveState.bulletCount == 0) return;
+
+        _audioSrc.PlayOneShot(shootSfx);
         --LiveState.bulletCount;
         GameObject bullet = Instantiate(
             bulletPrefab, transform.position + Vector3.forward * 1.5f, bulletPrefab.transform.rotation
@@ -49,6 +56,7 @@ public class PlayerActions : MonoBehaviour {
         _cubeAction.Player.Fire.performed += OnFire;
 
         _body = GetComponent<Rigidbody>();
+        _audioSrc = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate() {

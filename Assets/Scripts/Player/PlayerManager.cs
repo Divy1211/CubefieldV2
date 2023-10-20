@@ -1,17 +1,32 @@
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
+    public AudioClip collideSfx;
+    public AudioClip powerupSfx;
+    public AudioClip gameOverSfx;
+
+    private AudioSource audioSrc;
+
+    private void Start() {
+        audioSrc = GetComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter(Collision other) {
         switch (other.gameObject.tag) {
             case "Obstacle": {
+                audioSrc.PlayOneShot(collideSfx);
                 if (--LiveState.lives == 0) {
+                    audioSrc.PlayOneShot(gameOverSfx);
                     Event.gameOver.Raise();
+                } else {
+                    Event.screenShake.Raise();
                 }
 
                 break;
             }
             case "LaserPowerup": {
-                LiveState.bulletCount += 10;
+                audioSrc.PlayOneShot(powerupSfx);
+                LiveState.bulletCount += 5;
                 break;
             }
         }
