@@ -12,7 +12,7 @@
 Genre: **Casual** (Endless Runner like Temple Run/Subway Surf)
 Main Objective: **Make it as far as possible by avoiding running into cubes, 3 lives**
 
-SCREENSHOT_PLACEHOLDER
+![MainMenu](./MainMenu.png)
 
 ### Game Executable
 
@@ -26,12 +26,14 @@ SCREENSHOT_PLACEHOLDER
 
 Provide a **link** to download your game executable
 
+Windows: [Extract this zip into ONE folder, then the exe can be run](./Build.zip)
+
 ### How to Play
 
 - Starting: Click "Start"
 - Progression:
   - Movement: Move/Jump (A/D, Space) to avoid running into cubes
-  - Shooting: shoot cubes to destroy them if you obtain the Laser powerup
+  - Shooting: Shoot cubes (Z) to destroy them if you obtain the Laser powerup
   - Speed: Movement speed increases over time
   - Lives: Colliding with a cube will lose a life and grant temp invincibility for 5s to allow stabilisation
 - Special: Collect Ammo
@@ -42,6 +44,8 @@ Provide a **link** to download your game executable
 ### Gameplay Video
 
 A ~60s recorded run of your game from start to finish (you may record from Unity editor, show your Game window clearly). You may provide a **working link, or a gif embedded directly here.**
+
+https://youtu.be/zoOsmr7tfuE
 
 ## Features Implementation
 
