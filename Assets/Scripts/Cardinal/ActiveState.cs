@@ -12,6 +12,8 @@ public class ActiveState : MonoBehaviour {
     public static int lives = 3;
     public static int bulletCount = 0;
 
+    public bool mainMenu;
+
     private static float _elapsedTime;
 
     public GameConfig easy;
@@ -26,6 +28,9 @@ public class ActiveState : MonoBehaviour {
         _easy = easy;
         _med = med;
         _hard = hard;
+        if(mainMenu) {
+            ActiveConfig.config = _easy;
+        }
     }
 
     private void Update() {
@@ -39,6 +44,7 @@ public class ActiveState : MonoBehaviour {
 
     public void OnGameOver() {
         Time.timeScale = 0.0f;
+        PersistState.highScore = Mathf.Max(PersistState.highScore, score);
     }
 
     public void OnGameReset() {
@@ -54,5 +60,6 @@ public class ActiveState : MonoBehaviour {
         ActiveConfig.config = difficulty != Difficulty.Easy ? difficulty != Difficulty.Medium ? _hard : _med : _easy;
 
         speed = ActiveConfig.speed;
+        _elapsedTime = 0;
     }
 }
