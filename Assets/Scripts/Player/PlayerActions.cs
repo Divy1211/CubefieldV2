@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MovePlayer : MonoBehaviour {
+public class PlayerActions : MonoBehaviour {
+    public GameObject bulletPrefab;
+
     public float speed = 10.0f;
     public float jumpImpulse = 10.0f;
     public float gravityScale = 1.0f;
@@ -10,8 +12,8 @@ public class MovePlayer : MonoBehaviour {
 
     private CubeAction _cubeAction;
     private Rigidbody _body;
-    private float _velocityX;
 
+    private float _velocityX;
     private bool _onGround = true;
 
     private void OnMovement(InputAction.CallbackContext ctx) {
@@ -26,7 +28,15 @@ public class MovePlayer : MonoBehaviour {
         _body.AddForce(Vector3.up * jumpImpulse, ForceMode.Impulse);
     }
 
-    private void OnFire(InputAction.CallbackContext ctx) { }
+    private void OnFire(InputAction.CallbackContext ctx) {
+        if (LiveState.bulletCount == 0) return;
+        --LiveState.bulletCount;
+        GameObject bullet = Instantiate(
+            bulletPrefab, transform.position + Vector3.forward * 1.5f, bulletPrefab.transform.rotation
+        );
+        Rigidbody body = bullet.GetComponent<Rigidbody>();
+        body.velocity = Vector3.forward * speed;
+    }
 
     private void Start() {
         _cubeAction = new CubeAction();

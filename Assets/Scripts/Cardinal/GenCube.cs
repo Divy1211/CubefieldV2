@@ -18,7 +18,7 @@ public class GenCube : MonoBehaviour {
 
     private Rigidbody _body;
 
-    IEnumerator GenCubes() {
+    private IEnumerator GenCubes() {
         while (true) {
             yield return new WaitForSecondsRealtime(genDelta);
             for (int x = -lineWidth; x <= lineWidth; ++x) {
@@ -50,7 +50,7 @@ public class GenCube : MonoBehaviour {
     }
 
     private void OnReset() {
-        StopCoroutine(GenCubes());
+        StopAllCoroutines();
         StartCoroutine(GenCubes());
     }
 }

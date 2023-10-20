@@ -1,9 +1,15 @@
 using TMPro;
 using UnityEngine;
 
+public enum HudType {
+    Score,
+    Highscore,
+    Lives,
+    Bullets
+}
+
 public class ScoreController : MonoBehaviour {
-    public bool isHighscore;
-    public bool isLife;
+    public HudType type;
 
     private TextMeshProUGUI scoreText;
 
@@ -12,16 +18,23 @@ public class ScoreController : MonoBehaviour {
     }
 
     private void Update() {
-        if (isLife) {
-            scoreText.text = "Lives: " + StateLive.lives;
-            return;
+        switch (type) {
+            case HudType.Lives: {
+                scoreText.text = "Lives: " + LiveState.lives;
+                break;
+            }
+            case HudType.Highscore: {
+                scoreText.text = "Top Score: " + StatePersist.highScore;
+                break;
+            }
+            case HudType.Bullets: {
+                scoreText.text = "Bullets: " + LiveState.bulletCount;
+                break;
+            }
+            case HudType.Score: {
+                scoreText.text = "Score: " + LiveState.score;
+                break;
+            }
         }
-
-        if (isHighscore) {
-            scoreText.text = "Top Score: " + StatePersist.highScore;
-            return;
-        }
-
-        scoreText.text = "Score: " + StateLive.score;
     }
 }

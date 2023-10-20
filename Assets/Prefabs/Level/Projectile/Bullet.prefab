@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6286946933778297683
+--- !u!1 &7169487734632367287
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3701502304257243429}
-  - component: {fileID: 6221949974407574458}
-  - component: {fileID: 1354346415809301070}
-  - component: {fileID: 2963288726274526303}
-  - component: {fileID: 3950181540352348352}
-  - component: {fileID: -8512675957191655843}
-  - component: {fileID: 8649031448737749261}
-  - component: {fileID: 4210258500044757100}
+  - component: {fileID: 8541485991548123885}
+  - component: {fileID: 3949344109793993753}
+  - component: {fileID: 2709812536580559465}
+  - component: {fileID: 6042626737391870670}
+  - component: {fileID: 1286761463250728438}
+  - component: {fileID: 371465791818297106}
   m_Layer: 0
-  m_Name: CubeO
-  m_TagString: Obstacle
+  m_Name: Bullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3701502304257243429
+--- !u!4 &8541485991548123885
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286946933778297683}
+  m_GameObject: {fileID: 7169487734632367287}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.241607, y: 2.61, z: -0.13}
+  m_LocalScale: {x: 0.08, y: 1, z: 0.08}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6221949974407574458
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!33 &3949344109793993753
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286946933778297683}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1354346415809301070
+  m_GameObject: {fileID: 7169487734632367287}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2709812536580559465
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286946933778297683}
+  m_GameObject: {fileID: 7169487734632367287}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -66,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 916469c4ac418b74ca7a2a295c9e307d, type: 2}
+  - {fileID: 2100000, guid: bd6b2f467522f634fa622f9c346f4f01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,14 +86,14 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2963288726274526303
-BoxCollider:
+--- !u!136 &6042626737391870670
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286946933778297683}
-  m_Material: {fileID: 13400000, guid: 7447495e096c60b49bb6f3002087e85c, type: 2}
+  m_GameObject: {fileID: 7169487734632367287}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -106,16 +104,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3950181540352348352
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!54 &1286761463250728438
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286946933778297683}
+  m_GameObject: {fileID: 7169487734632367287}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -134,57 +134,17 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 118
   m_CollisionDetection: 0
---- !u!114 &-8512675957191655843
+--- !u!114 &371465791818297106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286946933778297683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e04d93fda1b2044f9effeca76c4a9d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8649031448737749261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286946933778297683}
+  m_GameObject: {fileID: 7169487734632367287}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15e55b7ae3a15a74f9a831f4d0d4b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4210258500044757100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286946933778297683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2bd15d5f1bd46fe97e10eff78c4cff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  event: {fileID: 11400000, guid: 573d0dbca649c5b4eac0afd2b1928830, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8512675957191655843}
-        m_TargetAssemblyTypeName: MoveCube, Assembly-CSharp
-        m_MethodName: OnGameReset
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

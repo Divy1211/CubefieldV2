@@ -3,16 +3,16 @@ using UnityEngine;
 public class MoveCam : MonoBehaviour {
     public GameObject player;
 
-    private Transform playerPos;
-    private Transform camPos;
+    private Transform _playerPos;
+    private Transform _camPos;
 
     void Start() {
-        playerPos = player.GetComponent<Transform>();
-        camPos = GetComponent<Transform>();
+        _playerPos = player.GetComponent<Transform>();
+        _camPos = transform;
     }
 
     void Update() {
-        var pos = camPos.position;
-        camPos.position = new Vector3(playerPos.position.x, pos.y, pos.z);
+        var pos = _camPos.position;
+        _camPos.position = new Vector3(_playerPos.position.x, pos.y, pos.z);
     }
 }

@@ -28,7 +28,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
             ""id"": ""61291402-0638-4cbb-9f08-75f789fabce6"",
             ""actions"": [
                 {
-                    ""name"": ""MovePlayer"",
+                    ""name"": ""PlayerActions"",
                     ""type"": ""Value"",
                     ""id"": ""8666231b-ebc1-4b51-90bd-f7114faee6a4"",
                     ""expectedControlType"": ""Vector2"",
@@ -63,7 +63,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -74,7 +74,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -85,7 +85,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -96,7 +96,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -107,7 +107,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -118,7 +118,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -129,7 +129,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -140,7 +140,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -151,7 +151,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -162,7 +162,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MovePlayer"",
+                    ""action"": ""PlayerActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -195,7 +195,7 @@ public partial class @CubeAction: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Movement = m_Player.FindAction("MovePlayer", throwIfNotFound: true);
+        m_Player_Movement = m_Player.FindAction("PlayerActions", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
     }

@@ -5,7 +5,7 @@ public class ButtonController : MonoBehaviour {
         Event.gameReset.Raise();
     }
     // public void OnClickGamePause() {
-    //     StateLive.isPaused;
+    //     LiveState.isPaused;
     //     Event.gamePause.Raise();
     // }
     // public void OnClickStartStart() {

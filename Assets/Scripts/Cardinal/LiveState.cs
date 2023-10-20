@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class StateLive : MonoBehaviour {
+public class LiveState : MonoBehaviour {
     public static int score;
     public static int lives = 3;
+    public static int bulletCount = 0;
 
     private static int _difficultyMultiplier = 1;
     private static float _gameStartTime;

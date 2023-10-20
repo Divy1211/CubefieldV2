@@ -3,7 +3,7 @@ using UnityEngine;
 public class MoveCube : MonoBehaviour {
     private Rigidbody _body;
 
-    void Start() {
+    private void Start() {
         _body = GetComponent<Rigidbody>();
     }
 
