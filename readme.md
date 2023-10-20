@@ -35,7 +35,6 @@ Windows: [Extract this zip into ONE folder, then the exe can be run](./Build.zip
   - Movement: Move/Jump (A/D, Space) to avoid running into cubes
   - Shooting: Shoot cubes (Z) to destroy them if you obtain the Laser powerup
   - Speed: Movement speed increases over time
-  - Lives: Colliding with a cube will lose a life and grant temp invincibility for 5s to allow stabilisation
 - Special: Collect Ammo
   - Ammo: destroy blocks by shooting lasers (each ammo collected gives 5 laser shots)
 - Resolving:
@@ -59,7 +58,7 @@ You are free to transform the table below into short paragraphs if you'd like. T
 | 2  (-)        | $\textbf{Black}$              | 3 Different actions (move, jump, shoot)                                                                                                       | 0                  | 0             |
 | 3  (-)        | $\textbf{Black}$              | Runnable EXE                                                                                                                                  | 0                  | 0             |
 | 4  (-)        | $\textbf{Black}$              | README                                                                                                                                        | 0                  | 0             |
-| 23 (-)        | $\text{White}$                | 2D Canvas UI, 2 Elements (Score, Pause, Reset)                                                                                                | 1                  | 3             |
+| 23 (-)        | $\text{White}$                | 2D Canvas UI, 2 Elements (Score, Lives, Bullets, Reset)                                                                                       | 1                  | 3             |
 | 34 (4)        | $\text{White}$                | Mnemonic var, fn, class naming                                                                                                                | 1                  | 3             |
 | 35 (4)        | $\text{White}$                | Organised Assets into appropriate folders                                                                                                     | 1                  | 3             |
 | 36 (4)        | $\text{White}$                | Git commits follow [conventions](https://www.conventionalcommits.org/en/v1.0.0/)                                                              | 1                  | 3             |
@@ -68,7 +67,7 @@ You are free to transform the table below into short paragraphs if you'd like. T
 | 56 (3)        | $\color{orange}\text{Orange}$ | Audio Feedback (jump, shoot, collect powerup)                                                                                                 | 2                  | 10            |
 | 71 (4)        | $\color{pink}\text{Pink}$     | Modular Design of 10+ Scripts (each script is self contained and does not interact directly with any other object's script)                   | 3                  | 15            |
 | 73 (3)        | $\color{pink}\text{Pink}$     | Static classes are used for 1. Active state-keeping, 2. Proxying SOs for persistent states/configs 3. Centralising access to Events           | 3                  | 15            |
-| 74 (3)        | $\color{pink}\text{Pink}$     | SO Event architecture (used for resets, pauses, player getting hit, player dying, ui controls)                                                | 3                  | 15            |
+| 74 (3)        | $\color{pink}\text{Pink}$     | SO Event architecture (used for resets, game over, selecting difficulties, etc.)                                                              | 3                  | 15            | 
 | 83 (3)        | $\color{purple}\text{Purple}$ | Dynamic Difficulty - The player speed starts to increases over time. Additionally, 3 difficulty levels (easy, medium, hard) are provided      | 4                  | 20            |
 | 85 (4)        | $\color{purple}\text{Purple}$ | Object Pooling (cubes are pooled!)                                                                                                            | 4                  | 20            |
 

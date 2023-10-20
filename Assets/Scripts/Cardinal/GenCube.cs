@@ -20,6 +20,7 @@ public class GenCube : MonoBehaviour {
 
     private Rigidbody _body;
     private static List<GameObject> _cubePool;
+    private const int Len = 150;
 
     private void FixedUpdate() {
         genDist = ActiveConfig.genDist;
@@ -61,7 +62,7 @@ public class GenCube : MonoBehaviour {
                 _cubePool[i].SetActive(true);
                 _cubePool[i].transform.position = new Vector3(x, 0.9f, 40.0f + Random.Range(-genVariance, genVariance));
                 ++i;
-                i %= 100;
+                i %= Len;
             }
 
             if (_pathX == -lineWidth + 2) {
@@ -77,7 +78,7 @@ public class GenCube : MonoBehaviour {
     private void Awake() {
         _cubePool = new List<GameObject>();
 
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < Len; ++i) {
             int j = Mathf.RoundToInt(Random.Range(-0.5f, 2.5f));
             GameObject cube = Instantiate(
                 cubes[j],

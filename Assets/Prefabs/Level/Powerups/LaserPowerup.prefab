@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4396045186640036744}
   - component: {fileID: 6198407027398485245}
   - component: {fileID: 7165986268309884910}
-  - component: {fileID: 7104445390750278579}
   - component: {fileID: -8706360004976347862}
   - component: {fileID: 4348421340463108497}
   m_Layer: 0
@@ -151,18 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e04d93fda1b2044f9effeca76c4a9d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7104445390750278579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5362359269173617175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15e55b7ae3a15a74f9a831f4d0d4b5a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-8706360004976347862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,8 +178,8 @@ MonoBehaviour:
   response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7104445390750278579}
-        m_TargetAssemblyTypeName: DestroyCube, Assembly-CSharp
+      - m_Target: {fileID: -8706360004976347862}
+        m_TargetAssemblyTypeName: CollectPowerup, Assembly-CSharp
         m_MethodName: OnGameReset
         m_Mode: 1
         m_Arguments:
