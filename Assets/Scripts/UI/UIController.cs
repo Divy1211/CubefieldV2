@@ -16,11 +16,11 @@ public class UIController : MonoBehaviour {
     //     pausedUi.SetActive(isPaused);
     // }
 
-    // public void OnGameReset() {
-    //     gameUi.SetActive(true);
-    //     gameOverUi.SetActive(false);
-    // }
-    //
+    public void OnGameReset() {
+        gameUi.SetActive(true);
+        gameOverUi.SetActive(false);
+    }
+
     // public void OnGameStart() {
     //     loadingUi.SetActive(true);
     // }

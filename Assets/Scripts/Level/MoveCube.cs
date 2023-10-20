@@ -13,4 +13,8 @@ public class MoveCube : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    public void OnGameReset() {
+        Destroy(gameObject);
+    }
 }

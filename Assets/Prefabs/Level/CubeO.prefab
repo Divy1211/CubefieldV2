@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2963288726274526303}
   - component: {fileID: 3950181540352348352}
   - component: {fileID: -8512675957191655843}
+  - component: {fileID: 4210258500044757100}
   m_Layer: 0
   m_Name: CubeO
   m_TagString: Obstacle
@@ -146,4 +147,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e04d93fda1b2044f9effeca76c4a9d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 0}
+--- !u!114 &4210258500044757100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6286946933778297683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bd15d5f1bd46fe97e10eff78c4cff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: 573d0dbca649c5b4eac0afd2b1928830, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -8512675957191655843}
+        m_TargetAssemblyTypeName: MoveCube, Assembly-CSharp
+        m_MethodName: OnGameReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
