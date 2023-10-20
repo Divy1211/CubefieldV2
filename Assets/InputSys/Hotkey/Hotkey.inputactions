@@ -1,0 +1,60 @@
+{
+    "name": "Hotkey",
+    "maps": [
+        {
+            "name": "UiAction",
+            "id": "0a9e3e89-5bac-43a7-9cb8-300e39754810",
+            "actions": [
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "062f4ed4-93fe-4d90-b712-67147fa99496",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "db3225fd-b067-433d-90e5-6fc043f5dca1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "45b7da87-9d97-4195-99cf-057c94ddca96",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5477b1d4-9094-4818-9d28-9e2db3aaa823",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": []
+        }
+    ]
+}
