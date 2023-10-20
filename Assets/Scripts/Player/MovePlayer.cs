@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Movement : MonoBehaviour {
+public class MovePlayer : MonoBehaviour {
     public float speed = 10.0f;
     public float jumpImpulse = 10.0f;
     public float gravityScale = 1.0f;
@@ -10,14 +10,13 @@ public class Movement : MonoBehaviour {
 
     private CubeAction _cubeAction;
     private Rigidbody _body;
+    private float _velocityX;
 
     private bool _onGround = true;
 
     private void OnMovement(InputAction.CallbackContext ctx) {
         var x = ctx.ReadValue<Vector2>().x;
-        var velocity = _body.velocity;
-
-        _body.velocity = new Vector3((x != 0 ? x > 0 ? 1 : -1 : 0) * speed, velocity.y, velocity.z);
+        _velocityX = (x != 0 ? x > 0 ? 1 : -1 : 0) * speed;
     }
 
     private void OnJump(InputAction.CallbackContext ctx) {
@@ -43,6 +42,8 @@ public class Movement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+        var vel = _body.velocity;
+        _body.velocity = new Vector3(_velocityX, vel.y, vel.z);
         _body.AddForce(Vector3.down * (_body.mass * g * gravityScale), ForceMode.Acceleration);
 
         var pos = _body.transform.localPosition;
