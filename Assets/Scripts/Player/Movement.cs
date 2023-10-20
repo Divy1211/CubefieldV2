@@ -11,15 +11,19 @@ public class Movement : MonoBehaviour {
     private CubeAction _cubeAction;
     private Rigidbody _body;
 
+    private bool _onGround = true;
+
     private void OnMovement(InputAction.CallbackContext ctx) {
-        Debug.Log(ctx.ReadValue<Vector2>());
         var x = ctx.ReadValue<Vector2>().x;
         var velocity = _body.velocity;
 
-        _body.velocity = new Vector3((x != 0 ? x > 0 ? 1 : -1 : 0)*speed, velocity.y, velocity.z);
+        _body.velocity = new Vector3((x != 0 ? x > 0 ? 1 : -1 : 0) * speed, velocity.y, velocity.z);
     }
 
     private void OnJump(InputAction.CallbackContext ctx) {
+        if (!_onGround) return;
+
+        _onGround = false;
         _body.AddForce(Vector3.up * jumpImpulse, ForceMode.Impulse);
     }
 
@@ -42,6 +46,12 @@ public class Movement : MonoBehaviour {
         _body.AddForce(Vector3.down * (_body.mass * g * gravityScale), ForceMode.Acceleration);
 
         var pos = _body.transform.localPosition;
-        _body.transform.localPosition = new Vector3(Help.Clamp(-4, pos.x, 4), pos.y, pos.z);
+        _body.transform.localPosition = new Vector3(Mathf.Clamp(pos.x, -4, 4), pos.y, pos.z);
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("Ground")) {
+            _onGround = true;
+        }
     }
 }
